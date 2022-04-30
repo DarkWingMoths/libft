@@ -6,7 +6,7 @@
 /*   By: mgagnon <mgagnon@student.42quebec.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 14:48:17 by mgagnon           #+#    #+#             */
-/*   Updated: 2022/04/26 15:06:44 by mgagnon          ###   ########.fr       */
+/*   Updated: 2022/04/29 13:34:48 by mgagnon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,16 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	new_len;
-	char	*new_str;
-	size_t	s1_len;
-	size_t	set_len;
 	size_t	index;
+	size_t	s1_len;
 
-	set_len = ft_strlen(set);
-	s1_len = ft_strlen(s1);
-	new_len = s1_len - set_len + 1;
-	new_str = malloc(sizeof(char) * new_len);
-	if (!new_str)
+	if (!s1 || !set)
 		return (NULL);
-	while (s1)
-	{
-	return (new_str);
+	s1_len = ft_strlen(s1);
+	index = 0;
+	while (ft_strchr(set, (int)s1[index]) && index < s1_len)
+			index++;
+	while (ft_strchr(set, (int)s1[s1_len]) && s1_len > index)
+		s1_len--;
+	return (ft_substr(s1, (unsigned int)index, (s1_len - index + 1)));
 }
