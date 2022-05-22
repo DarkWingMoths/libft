@@ -6,7 +6,7 @@
 /*   By: mgagnon <mgagnon@student.42quebec.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 14:48:44 by mgagnon           #+#    #+#             */
-/*   Updated: 2022/04/13 20:06:00 by mgagnon          ###   ########.fr       */
+/*   Updated: 2022/05/18 16:51:57 by mgagnon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,5 @@ int	ft_tolower(int c)
 {
 	if (c < 'A' || c > 'Z')
 		return (c);
-	else
-		return (c + 32);
+	return (c + 32);
 }

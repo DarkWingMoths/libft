@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgagnon <mgagnon@student.42quebec.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/12 14:42:56 by mgagnon           #+#    #+#             */
-/*   Updated: 2022/05/12 19:27:53 by mgagnon          ###   ########.fr       */
+/*   Created: 2022/05/19 09:35:57 by mgagnon           #+#    #+#             */
+/*   Updated: 2022/05/21 15:36:15 by mgagnon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	write(fd, &c, 1);
+	t_list	*proxy;
+
+	if (!lst || !del)
+		return ;
+	while (*lst)
+	{
+		proxy = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		(*lst) = proxy;
+	}
 }

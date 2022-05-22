@@ -6,7 +6,7 @@
 /*   By: mgagnon <mgagnon@student.42quebec.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 14:48:29 by mgagnon           #+#    #+#             */
-/*   Updated: 2022/04/29 10:42:58 by mgagnon          ###   ########.fr       */
+/*   Updated: 2022/05/13 18:13:02 by mgagnon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
+	if ((int)len > ft_strlen(s))
+		len = ft_strlen(s);
 	if ((int)start >= ft_strlen(s))
 		return (ft_strdup(""));
 	new_s = malloc(sizeof (char) * (len + 1));

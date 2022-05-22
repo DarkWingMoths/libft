@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgagnon <mgagnon@student.42quebec.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/12 14:40:01 by mgagnon           #+#    #+#             */
-/*   Updated: 2022/04/14 14:06:26 by mgagnon          ###   ########.fr       */
+/*   Created: 2022/05/18 10:58:53 by mgagnon           #+#    #+#             */
+/*   Updated: 2022/05/18 11:47:01 by mgagnon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int	c;
-
-	c = '\0';
-	ft_memset(s, c, n);
+	ft_memset(s, '\0', n);
 }
